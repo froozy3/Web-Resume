@@ -1,0 +1,374 @@
+/*HEADER*/
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    -webkit-box-shadow: 0 5px, 25px, rgba(0, 0, 0, 0, 15);
+    box-shadow: 0 5px rgba();
+    background-color: #00ffd5;
+}
+
+.header_img {
+    height: 48px;
+    width: 148px;
+}
+
+.form-control::placeholder {
+    color: #ccc;
+    /* Установите светлый цвет для placeholder */
+}
+
+
+main {
+    display: block;
+    text-align: center;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700);
+
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+
+
+#advices {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.row {
+    padding: 50px 0;
+}
+
+.seperator {
+    margin-bottom: 30px;
+    width: 35px;
+    height: 3px;
+    background: #777;
+    border: none;
+}
+
+.title {
+    text-align: center;
+
+    .row {
+        padding: 50px 0 0;
+    }
+
+    h1 {
+        text-transform: uppercase;
+    }
+
+    .seperator {
+        margin: 0 auto 10px;
+    }
+}
+
+.item {
+    position: relative;
+    margin-bottom: 30px;
+    min-height: 1px;
+    float: left;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .item-in {
+        background: #fff;
+        padding: 40px;
+        position: relative;
+
+        &:hover:before {
+            width: 100%;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0px;
+            height: 2px;
+            width: 0%;
+            background: #333333;
+            right: 0px;
+            -webkit-transition: width 0.4s;
+            transition: width 0.4s;
+        }
+    }
+}
+
+.item {
+
+    h4 {
+        font-size: 18px;
+        margin-top: 25px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    p {
+        font-size: 12px;
+    }
+
+    a {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #666666;
+        margin-top: 10px;
+
+        i {
+            opacity: 0;
+            padding-left: 0px;
+            transition: 0.4s;
+            font-size: 24px;
+            display: inline-block;
+            top: 5px;
+            position: relative;
+        }
+
+        &:hover {
+            text-decoration: none;
+
+            i {
+                padding-left: 10px;
+                opacity: 1;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+.item .icon {
+    position: absolute;
+    top: 27px;
+    left: -16px;
+    cursor: pointer;
+
+    a {
+        font-family: 'Merriweather', serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #999;
+        text-transform: none;
+    }
+
+    svg {
+        width: 32px;
+        height: 32px;
+        float: left;
+    }
+
+    .icon-topic {
+        opacity: 0;
+        padding-left: 0px;
+        transition: 0.4s;
+        display: inline-block;
+        top: 0px;
+        position: relative;
+    }
+
+    &:hover .icon-topic {
+        opacity: 1;
+        padding-left: 10px;
+    }
+}
+
+@media only screen and (max-width : 768px) {
+    .item .icon {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+}
+
+
+.resume-card {
+    transition: all 0.2s ease;
+    background-color: #f3f3f3;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.resume-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Заголовок карточки */
+.resume-header {
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #e1e1e1;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Метки */
+.badge-light {
+    font-size: 14px;
+    background-color: #e1e1e1;
+    color: #0078d7;
+    font-weight: 500;
+}
+
+/* Кнопки */
+.btn-outline-primary {
+    border-color: #0078d7;
+    color: #0078d7;
+    transition: background-color 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #0078d7;
+    color: #fff;
+}
+
+.btn-outline-danger {
+    border-color: #d32f2f;
+    color: #d32f2f;
+    transition: background-color 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+    background-color: #d32f2f;
+    color: #fff;
+}
+
+/* Модальные окна */
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 0;
+}
+
+.modal-footer {
+    border-top: 0;
+}
+
+/* Отступы и структура */
+.resume-body {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+h2 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+/* Стиль заголовка в стиле Microsoft */
+.ms-heading {
+    font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
+    font-weight: 600;
+    /* Полужирный, но не слишком тяжелый */
+    font-size: 28px;
+    /* Размер немного крупнее стандартного */
+    color: #323130;
+    /* Темный цвет для заголовка */
+    letter-spacing: 0.5px;
+    /* Легкое увеличение расстояния между буквами */
+    margin-bottom: 20px;
+}
+
+.ms-heading::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #0078d4;
+    /* Сдержанный фирменный синий цвет Microsoft */
+    margin: 10px auto 0;
+    /* Линия по центру для визуального акцента */
+}
+
+
+/* Заголовок в стиле Microsoft */
+.ms-heading {
+    font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
+    font-weight: 600;
+    font-size: 28px;
+    color: #323130;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.ms-heading::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #0078d4;
+    margin: 10px auto 0;
+}
+
+/* Стиль меток для полей ввода */
+.ms-label {
+    font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: #3c3c3c;
+}
+
+/* Поля ввода в стиле Microsoft */
+.ms-input,
+.ms-textarea {
+    border: 1px solid #d9d9d9;
+    border-radius: 4px;
+    padding: 10px;
+    font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
+    font-size: 14px;
+    color: #323130;
+    transition: border-color 0.2s ease;
+}
+
+.ms-input:focus,
+.ms-textarea:focus {
+    border-color: #0078d4;
+    box-shadow: 0 0 0 1px #0078d4;
+    outline: none;
+}
+
+/* Текстовые поля (textarea) */
+.ms-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Кнопка в стиле Microsoft */
+.ms-btn {
+    background-color: #0078d4;
+    border: none;
+    color: white;
+    font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
+    font-weight: 500;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.ms-btn:hover {
+    background-color: #005a9e;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}
+TemplatesUA
+{% endblock %}
+
+{% block main %}
+<style>
+    body {
+        background-color: #f8f9fa;
+        /* Светлый фон для всей страницы */
+    }
+
+    .login-container {
+        max-width: 400px;
+        /* Ограниченная ширина для формы логина */
+        margin: 80px auto;
+        /* Центровка формы по вертикали и горизонтали */
+        padding: 30px;
+        background-color: white;
+        /* Белый фон формы */
+        border-radius: 10px;
+        /* Закругленные углы */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Легкий теневой эффект */
+    }
+
+    h2 {
+        text-align: center;
+        /* Центрирование заголовка */
+        color: #007bff;
+        /* Основной цвет заголовка */
+        margin-bottom: 20px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        /* Кнопка занимает всю ширину контейнера */
+    }
+
+    .form-label {
+        font-weight: 500;
+        /* Полужирный текст меток */
+    }
+</style>
+<div class="login-container">
+    <h2>Login</h2>
+    <form method="POST" action="{{ url_for('login') }}">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username"
+                required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password"
+                required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+        {% if error %}
+        <div class="alert alert-danger mt-3" role="alert">
+            <strong>{{ error }}</strong>
+        </div>
+        {% endif %}
+    </form>
+    <p class="text-center mt-3">Don't have an account? <a href="{{ url_for('register') }}" class="link-primary">Register
+            here</a></p>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</html>
+{% endblock main %}

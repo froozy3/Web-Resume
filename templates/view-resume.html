@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %}
+View Resumes
+{% endblock %}
+
+
+
+{% block main %}
+
+<body>
+    <div class="container mt-5">
+        <h2>Resumes for User ID: {{ current_user.id }}</h2>
+        <!-- Check if there are resumes to display -->
+        {% if resumes %}
+        {% for resume in resumes %}
+        <div class="card mb-3">
+            <div class="card-body">
+                <h4 class="card-title">{{ resume.name }}</h4>
+                <p class="card-text"><strong>Email:</strong> {{ resume.email }}</p>
+                <p class="card-text"><strong>Phone:</strong> {{ resume.phone }}</p>
+                <p class="card-text"><strong>City:</strong> {{ resume.city }}</p>
+                <p class="card-text"><strong>Experience:</strong> {{ resume.experience }}</p>
+                <p class="card-text"><strong>Education:</strong> {{ resume.education }}</p>
+                <p class="card-text"><strong>Skills:</strong> {{ resume.skills }}</p>
+                <a href="{{ url_for('edit_resume', id=resume.id) }}" class="btn btn-secondary">Edit</a>
+                <!-- Кнопка для скачивания PDF -->
+                <a href="{{ url_for('generate_pdf', id=resume.id) }}" class="download-button">Download PDF</a>
+               
+                <!-- Delete button triggers modal -->
+                <button class="btn btn-danger" data-toggle="modal" data-target="#confirmDeleteModal{{ resume.id }}">
+                    Delete
+                </button>
+
+                <!-- Confirmation Modal -->
+                <div class="modal fade" id="confirmDeleteModal{{ resume.id }}" tabindex="-1" role="dialog"
+                    aria-labelledby="confirmDeleteModalLabel{{ resume.id }}" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="confirmDeleteModalLabel{{ resume.id }}">Confirm Deletion
+                                </h5>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete the resume for <strong>"{{ resume.name }}"</strong>?
+                            </div>
+                            <div class="modal-footer">
+                                <form action="{{ url_for('delete_resume', id=resume.id) }}" method="POST">
+                                    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+                                </form>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <p>No resumes found for this user.</p>
+        {% endif %}
+    </div>
+</body>
+
+{% endblock main %}

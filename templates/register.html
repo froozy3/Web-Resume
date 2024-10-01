@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+
+{% block title %}
+TemplatesUA
+{% endblock %}
+
+{% block main %}
+<style>
+    body {
+        background-color: #f8f9fa;
+        /* Светлый фон для всей страницы */
+    }
+
+    .register-container {
+        max-width: 400px;
+        /* Ограниченная ширина для формы регистрации */
+        margin: 80px auto;
+        /* Центровка формы по вертикали и горизонтали */
+        padding: 30px;
+        background-color: white;
+        /* Белый фон формы */
+        border-radius: 10px;
+        /* Закругленные углы */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Легкий теневой эффект */
+    }
+
+    h2 {
+        text-align: center;
+        /* Центрирование заголовка */
+        color: #007bff;
+        /* Основной цвет заголовка */
+        margin-bottom: 20px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        /* Кнопка занимает всю ширину контейнера */
+    }
+
+    .form-label {
+        font-weight: 500;
+        /* Полужирный текст меток */
+    }
+
+    .alert-danger {
+        margin-top: 20px;
+        /* Отступ сверху для сообщения об ошибке */
+    }
+
+    .link-primary {
+        color: #007bff;
+        /* Основной цвет ссылки */
+        text-decoration: none;
+        /* Убираем подчеркивание */
+    }
+
+    .link-primary:hover {
+        text-decoration: underline;
+        /* Подчеркивание при наведении */
+    }
+</style>
+
+<div class="register-container">
+    <h2>Register</h2>
+    <form method="POST" action="{{ url_for('register') }}">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Enter your username"
+                required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password"
+                required>
+        </div>
+        <div class="mb-3">
+            <label for="password2" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="password2" name="password2"
+                placeholder="Confirm your password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+        {% if error %}
+        <div class="alert alert-danger mt-3" role="alert">
+            <strong>{{ error }}</strong>
+        </div>
+        {% endif %}
+    </form>
+    <p class="text-center mt-3">Already have an account? <a href="{{ url_for('login') }}" class="link-primary">Login
+            here</a></p>
+</div>
+{% endblock main %}

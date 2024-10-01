@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pdf</title>
+</head>
+
+<style>
+    .header {
+        position: relative;
+        /* Позволяет использовать абсолютное позиционирование для псевдоэлемента */
+        display: inline-block;
+        /* Чтобы линия была под текстом */
+    }
+
+    .header::after {
+        content: " ";
+        /* Создает пустой псевдоэлемент */
+        position: absolute;
+        /* Позиционирование линии */
+        left: 0;
+        /* Сместить влево */
+        right: 0px;
+        /* Сместить вправо */
+        bottom: 10px;
+        /* Сместить вниз */
+        height: 3px;
+        /* Высота линии */
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Цвет линии с прозрачностью (черный, 50%) */
+        border-radius: 4px;
+        /* Закругляет углы линии */
+    }
+</style>
+
+<body>
+    <div class="header">
+        <h1>Resume</h1>
+    </div>
+
+
+    <div>
+        <p><strong>Full name:</strong> {{ resume.name }}</p>
+        <p class="card-text"><strong>Phone:</strong> {{ resume.phone }}</p>
+        <p class="card-text"><strong>City:</strong> {{ resume.city }}</p>
+        <p class="card-text"><strong>Experience:</strong> {{ resume.experience }}</p>
+        <p class="card-text"><strong>Education:</strong> {{ resume.education }}</p>
+        <p class="card-text"><strong>Skills:</strong> {{ resume.skills }}</p>
+    </div>
+</body>
+
+</html>
