@@ -1,365 +1,309 @@
-/*HEADER*/
-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    -webkit-box-shadow: 0 5px, 25px, rgba(0, 0, 0, 0, 15);
-    box-shadow: 0 5px rgba();
-    background-color: #00ffd5;
-}
-
-.header_img {
-    height: 48px;
-    width: 148px;
-}
-
-.form-control::placeholder {
-    color: #ccc;
-    /* Установите светлый цвет для placeholder */
-}
-
-
-main {
-    display: block;
-    text-align: center;
-}
-
-@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700);
-
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-
-
-
-#advices {
-    font-family: 'Montserrat', sans-serif;
-}
-
-.row {
-    padding: 50px 0;
-}
-
-.seperator {
-    margin-bottom: 30px;
-    width: 35px;
-    height: 3px;
-    background: #777;
+/* button logout */
+.Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
     border: none;
-}
-
-.title {
-    text-align: center;
-
-    .row {
-        padding: 50px 0 0;
-    }
-
-    h1 {
-        text-transform: uppercase;
-    }
-
-    .seperator {
-        margin: 0 auto 10px;
-    }
-}
-
-.item {
+    border-radius: 50%;
+    cursor: pointer;
     position: relative;
-    margin-bottom: 30px;
-    min-height: 1px;
-    float: left;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    .item-in {
-        background: #fff;
-        padding: 40px;
-        position: relative;
-
-        &:hover:before {
-            width: 100%;
-        }
-
-        &::before {
-            content: "";
-            position: absolute;
-            bottom: 0px;
-            height: 2px;
-            width: 0%;
-            background: #333333;
-            right: 0px;
-            -webkit-transition: width 0.4s;
-            transition: width 0.4s;
-        }
-    }
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: rgb(255, 65, 65);
 }
 
-.item {
-
-    h4 {
-        font-size: 18px;
-        margin-top: 25px;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-    }
-
-    p {
-        font-size: 12px;
-    }
-
-    a {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 12px;
-        text-transform: uppercase;
-        color: #666666;
-        margin-top: 10px;
-
-        i {
-            opacity: 0;
-            padding-left: 0px;
-            transition: 0.4s;
-            font-size: 24px;
-            display: inline-block;
-            top: 5px;
-            position: relative;
-        }
-
-        &:hover {
-            text-decoration: none;
-
-            i {
-                padding-left: 10px;
-                opacity: 1;
-                font-weight: 300;
-            }
-        }
-    }
+/* plus sign */
+.sign {
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.item .icon {
+.sign svg {
+    width: 17px;
+}
+
+.sign svg path {
+    fill: rgb(250, 250, 250);
+}
+
+/* text */
+.text {
     position: absolute;
-    top: 27px;
-    left: -16px;
-    cursor: pointer;
-
-    a {
-        font-family: 'Merriweather', serif;
-        font-size: 14px;
-        font-weight: 400;
-        color: #999;
-        text-transform: none;
-    }
-
-    svg {
-        width: 32px;
-        height: 32px;
-        float: left;
-    }
-
-    .icon-topic {
-        opacity: 0;
-        padding-left: 0px;
-        transition: 0.4s;
-        display: inline-block;
-        top: 0px;
-        position: relative;
-    }
-
-    &:hover .icon-topic {
-        opacity: 1;
-        padding-left: 10px;
-    }
-}
-
-@media only screen and (max-width : 768px) {
-    .item .icon {
-        position: relative;
-        top: 0;
-        left: 0;
-    }
-}
-
-
-.resume-card {
-    transition: all 0.2s ease;
-    background-color: #f3f3f3;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-.resume-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-/* Заголовок карточки */
-.resume-header {
-    background-color: #f9f9f9;
-    border-bottom: 1px solid #e1e1e1;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* Метки */
-.badge-light {
-    font-size: 14px;
-    background-color: #e1e1e1;
-    color: #0078d7;
-    font-weight: 500;
-}
-
-/* Кнопки */
-.btn-outline-primary {
-    border-color: #0078d7;
-    color: #0078d7;
-    transition: background-color 0.3s ease;
-}
-
-.btn-outline-primary:hover {
-    background-color: #0078d7;
-    color: #fff;
-}
-
-.btn-outline-danger {
-    border-color: #d32f2f;
-    color: #d32f2f;
-    transition: background-color 0.3s ease;
-}
-
-.btn-outline-danger:hover {
-    background-color: #d32f2f;
-    color: #fff;
-}
-
-/* Модальные окна */
-.modal-content {
-    border-radius: 10px;
-}
-
-.modal-header {
-    padding: 20px;
-    border-bottom: 0;
-}
-
-.modal-footer {
-    border-top: 0;
-}
-
-/* Отступы и структура */
-.resume-body {
-    background-color: #fff;
-    padding: 20px;
-}
-
-.container {
-    max-width: 1200px;
-}
-
-h2 {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-
-/* Стиль заголовка в стиле Microsoft */
-.ms-heading {
-    font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
-    font-weight: 600;
-    /* Полужирный, но не слишком тяжелый */
-    font-size: 28px;
-    /* Размер немного крупнее стандартного */
-    color: #323130;
-    /* Темный цвет для заголовка */
-    letter-spacing: 0.5px;
-    /* Легкое увеличение расстояния между буквами */
-    margin-bottom: 20px;
-}
-
-.ms-heading::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #0078d4;
-    /* Сдержанный фирменный синий цвет Microsoft */
-    margin: 10px auto 0;
-    /* Линия по центру для визуального акцента */
-}
-
-
-/* Заголовок в стиле Microsoft */
-.ms-heading {
-    font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
-    font-weight: 600;
-    font-size: 28px;
-    color: #323130;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.ms-heading::after {
-    content: "";
-    display: block;
-    width: 60px;
-    height: 4px;
-    background-color: #0078d4;
-    margin: 10px auto 0;
-}
-
-/* Стиль меток для полей ввода */
-.ms-label {
-    font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
-    font-weight: 500;
-    font-size: 14px;
-    color: #3c3c3c;
-}
-
-/* Поля ввода в стиле Microsoft */
-.ms-input,
-.ms-textarea {
-    border: 1px solid #d9d9d9;
-    border-radius: 4px;
-    padding: 10px;
-    font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
-    font-size: 14px;
-    color: #323130;
-    transition: border-color 0.2s ease;
-}
-
-.ms-input:focus,
-.ms-textarea:focus {
-    border-color: #0078d4;
-    box-shadow: 0 0 0 1px #0078d4;
-    outline: none;
-}
-
-/* Текстовые поля (textarea) */
-.ms-textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-/* Кнопка в стиле Microsoft */
-.ms-btn {
-    background-color: #0078d4;
-    border: none;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
     color: white;
-    font-family: "Segoe UI", Tahoma, Geneva, sans-serif;
+    font-size: 1.1em;
+    font-weight: 400;
+    transition-duration: .3s;
+}
+
+/* hover effect on button width */
+.Btn:hover {
+    width: 125px;
+    border-radius: 40px;
+    transition-duration: .3s;
+}
+
+.Btn:hover .sign {
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+}
+
+/* hover effect button's text */
+.Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+}
+
+/* button click effect*/
+.Btn:active {
+    transform: translate(2px, 2px);
+}
+
+
+/* в header подсветка */
+.nav-link {
+    position: relative;
+    /* Для позиционирования псевдоэлемента */
+    color: #f8f9fa;
+    /* Цвет текста */
+    text-decoration: none;
+    /* Убираем стандартное подчеркивание */
+}
+
+.nav-link.active {
     font-weight: 500;
-    padding: 10px 20px;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
+    transform: translateY(-3px);
+    /* "Выдвигает" элемент вверх при наведении */
+    /* Полужирный шрифт для активации */
 }
 
-.ms-btn:hover {
-    background-color: #005a9e;
+.nav-link.active::after {
+    content: '';
+    /* Создаем пустое содержимое */
+    position: absolute;
+    /* Позиционируем относительно ссылки */
+    left: 0;
+    /* Выравнивание по левому краю */
+    bottom: -2px;
+    /* Немного ниже текста для подчеркивания */
+    height: 2px;
+    /* Высота подчеркивания */
+    width: 100%;
+    /* Ширина подчеркивания */
+    background-color: #ffcc01;
+    /* Цвет подчеркивания */
+    transition: width 0.3s;
+    /* Плавный переход для анимации */
+}
+
+body {
+    background-color: #f5f6fa;
+
+}
+
+/* заголовок над формой резюме */
+
+
+/* 
+Форма резюме */
+.resume-form {
+    max-width: 750px;
+    /* Максимальная ширина формы */
+    margin: 50px auto;
+    /* Центрирование формы на странице с отступом сверху */
+    padding: 30px;
+    /* Внутренние отступы формы */
+    border: none;
+    /* Убрать границу */
+    border-radius: 10px;
+    /* Закругленные углы */
+    background-color: #ffffff;
+    /* Белый фон */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    /* Легкая тень для объема */
+    display: flex;
+    /* Flex-контейнер для вертикального расположения элементов */
+    flex-direction: column;
+    /* Вертикальное расположение элементов */
+    transition: transform 0.2s;
+    /* Плавный переход при изменении размеров */
+}
+
+
+.form-label {
+    font-weight: 600;
+    /* Жирный текст для меток */
+    color: #2c3e50;
+    /* Темный цвет текста для контраста */
+    font-size: 1.1rem;
+    /* Увеличенный размер шрифта для меток */
+    margin-bottom: 8px;
+    /* Отступ снизу для меток */
+}
+
+.form-control {
+    width: 100%;
+    /* Полная ширина для полей ввода */
+    padding: 12px;
+    /* Внутренний отступ в полях ввода */
+    border: 1px solid #dcdcdc;
+    /* Цвет границы полей ввода */
+    border-radius: 5px;
+    /* Закругленные углы полей ввода */
+    transition: border-color 0.2s, box-shadow 0.2s;
+    /* Плавный переход для цвета границы и тени */
+}
+
+.form-control:focus {
+    border-color: #34dbca;
+    /* Цвет границы при фокусе */
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+    /* Тень при фокусе */
+    outline: none;
+    /* Убрать стандартный контур */
+}
+
+.btn {
+    padding: 12px;
+    /* Внутренние отступы для кнопки */
+    border: none;
+    /* Убрать стандартные границы */
+    border-radius: 5px;
+    /* Закругленные углы кнопки */
+    color: #ffffff;
+    /* Белый цвет текста на кнопке */
+    background-color: #3498db;
+    /* Синий цвет кнопки */
     cursor: pointer;
+    /* Указатель при наведении на кнопку */
+    font-weight: 600;
+    /* Жирный текст для кнопки */
+    transition: background-color 0.3s, transform 0.3s;
+    /* Плавный переход для фона и трансформации */
+    font-size: 1rem;
+    /* Размер шрифта для кнопки */
 }
 
+.btn:hover {
+    background-color: #2980b9;
+    /* Более темный цвет при наведении */
+}
 
+.btn:active {
+    transform: scale(0.95);
+    /* Эффект сжатия при нажатии */
+}
+
+.alert {
+    margin-top: 20px;
+    /* Отступ сверху для сообщений об ошибках */
+    border-radius: 5px;
+    /* Закругленные углы для сообщения об ошибке */
+    padding: 15px;
+    /* Внутренние отступы для сообщения об ошибке */
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    /* Цвет фона для сообщений об ошибках */
+    color: #721c24;
+    /* Цвет текста для сообщений об ошибках */
+    border: 1px solid #f5c6cb;
+    /* Граница для сообщения об ошибке */
+}
+
+/* 
+карточка добавления резюме при просмотре резюме */
+.create-resume-card {
+    border: 2px dashed #ccc;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* button delete */
+.button {
+    position: relative;
+    border-radius: 6px;
+    width: 150px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border: 1px solid #cc0000;
+    background-color: #e50000;
+    overflow: hidden;
+}
+
+.button,
+.button__icon,
+.button__text {
+    transition: all 0.3s;
+}
+
+.button .button__text {
+    transform: translateX(35px);
+    color: #fff;
+    font-weight: 600;
+}
+
+.button .button__icon {
+    position: absolute;
+    transform: translateX(109px);
+    height: 100%;
+    width: 39px;
+    background-color: #cc0000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button .svg {
+    width: 20px;
+}
+
+.button:hover {
+    background: #cc0000;
+}
+
+.button:hover .button__text {
+    color: transparent;
+}
+
+.button:hover .button__icon {
+    width: 148px;
+    transform: translateX(0);
+}
+
+.button:active .button__icon {
+    background-color: #b20000;
+}
+
+.button:active {
+    border: 1px solid #b20000;
+}
 
 
 

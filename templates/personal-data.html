@@ -6,64 +6,88 @@ Creating Template
 
 {% block main %}
 <main class="container my-5">
-    <div class="resume-form p-4 shadow-sm rounded bg-light">
-        <h2 class="ms-heading mb-4 text-center">Create Your Resume</h2>
-        <form action="{{ url_for('personal_data') }}" method="POST" class="needs-validation" novalidate>
+    <div class= "">
+        <h2 id="h2"class="ms-heading mb-4 text-center">Create Your Resume</h2>
+        <form action="{{ url_for('personal_data') }}" method="POST" class="resume-form bg-light" novalidate>
             <!-- Имя -->
-            <div class=" mb-3">
-                <input type="text" class="form-control ms-input" id="name" name="name" placeholder="John Doe" required>
-                <label for="name" class="ms-label">Name</label>
-                <div class="invalid-feedback">Please enter your name.</div>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="John Doe" required>
+            </div>
+
+            <!-- Image -->
+            <div class="mb-3" id="avatar">
+                <label for="image" class="form-label">Image</label>
+                <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
             </div>
 
             <!-- Email -->
-            <div class=" mb-3">
-                <input type="email" class="form-control ms-input" id="email" name="email" placeholder="john@example.com"
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="john@example.com"
                     required>
-                <label for="email" class="ms-label">Email</label>
                 <div class="invalid-feedback">Please enter a valid email address.</div>
             </div>
 
             <!-- Телефон -->
-            <div class=" mb-3">
-                <input type="tel" class="form-control ms-input" id="phone" name="phone" placeholder="+1234567890"
-                    required>
-                <label for="phone" class="ms-label">Phone</label>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="+1234567890" required>
                 <div class="invalid-feedback">Please enter your phone number.</div>
             </div>
 
             <!-- Город -->
-            <div class=" mb-3">
-                <input type="text" class="form-control ms-input" id="city" name="city" placeholder="New York">
-                <label for="city" class="ms-label">City</label>
+            <div class="mb-3">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city" name="city" placeholder="New York">
             </div>
 
             <!-- Опыт работы -->
-            <div class=" mb-3">
-                <textarea class="form-control ms-textarea" id="experience" name="experience"
+            <div class="mb-3">
+                <label for="experience" class="form-label">Experience</label>
+                <textarea class="form-control" id="experience" name="experience"
                     placeholder="Describe your work experience" style="height: 100px"></textarea>
-                <label for="experience" class="ms-label">Experience</label>
             </div>
 
             <!-- Образование -->
-            <div class=" mb-3">
-                <textarea class="form-control ms-textarea" id="education" name="education"
+            <div class="mb-3">
+                <label for="education" class="form-label">Education</label>
+                <textarea class="form-control" id="education" name="education"
                     placeholder="Describe your education background" style="height: 100px"></textarea>
-                <label for="education" class="ms-label">Education</label>
             </div>
 
             <!-- Навыки -->
-            <div class=" mb-3">
-                <textarea class="form-control ms-textarea" id="skills" name="skills" placeholder="List your key skills"
+            <div class="mb-3">
+                <label for="skills" class="form-label">Skills</label>
+                <textarea class="form-control" id="skills" name="skills" placeholder="List your key skills"
                     style="height: 100px"></textarea>
-                <label for="skills" class="ms-label">Skills</label>
             </div>
 
             <!-- Кнопка отправки -->
             <div class="d-grid">
-                <button type="submit" class="btn btn-primary ms-btn btn-lg">Submit Resume</button>
+                <button type="submit" class="btn btn-primary btn-lg">Submit Resume</button>
             </div>
         </form>
+
     </div>
+    {% if error %}
+    <div id="error-message" class="alert alert-danger alert-dismissible fade show" role="alert">
+        {{ error }}
+    </div>
+    {% endif %}
+
+    <script>
+        window.onload = function () {
+            var errorMessage = document.getElementById("error-message");
+            if (errorMessage) {
+                // Прокручиваем страницу к сообщению об ошибке
+                errorMessage.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        };
+    </script>
+
+
+
 </main>
+
 {% endblock %}
