@@ -12,10 +12,6 @@ db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-from auth_routes import *
-from resume_routes import *
-
-
 
 if __name__ == '__main__':
     with app.app_context():
