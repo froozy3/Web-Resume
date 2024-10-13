@@ -130,3 +130,5 @@ def generate_pdf(id):
 def preview_resume(id):
     resume = Resume.query.filter_by(id=id).first()
     return render_template('pdf.html', resume=resume)
+
+

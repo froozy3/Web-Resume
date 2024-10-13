@@ -6,8 +6,8 @@ Creating Template
 
 {% block main %}
 <main class="container my-5">
-    <div class= "">
-        <h2 id="h2"class="ms-heading mb-4 text-center">Create Your Resume</h2>
+    <div class="">
+        <h2 id="h2" class="ms-heading mb-4 text-center">Create Your Resume</h2>
         <form action="{{ url_for('personal_data') }}" method="POST" class="resume-form bg-light" novalidate>
             <!-- Имя -->
             <div class="mb-3">
@@ -38,8 +38,8 @@ Creating Template
 
             <!-- Город -->
             <div class="mb-3">
-                <label for="city" class="form-label">City</label>
-                <input type="text" class="form-control" id="city" name="city" placeholder="New York">
+                <label for="city" class="form-label">City, Country</label>
+                <input type="text" class="form-control" id="city" name="city" placeholder="New York, USA">
             </div>
 
             <!-- Опыт работы -->

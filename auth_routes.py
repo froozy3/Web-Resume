@@ -1,6 +1,6 @@
 from app import app, db, login_manager
 from models import User
-from flask import render_template, request, redirect, url_for
+from flask import render_template, request, redirect, url_for, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user
 
@@ -50,12 +50,15 @@ def login():
     if request.method == 'POST':
         username = request.form.get('username')
         password = request.form.get('password')
+        remember_me = request.form.get('remember_me')
 
-        # найти пользователя по имени
+        # Find user by username
         user = User.query.filter_by(username=username).first()
 
+        # Check if user exists and the password is correct
         if user and check_password_hash(user.password, password):
-            login_user(user)
+            login_user(user, remember=remember_me == 'on')
+            flash("Login successfull", 'success')
             return redirect(url_for('home_page'))
 
         return render_template('login.html', error='Invalid username or password.')
